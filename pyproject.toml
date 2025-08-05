@@ -1,0 +1,25 @@
+[project]
+name = "slate"
+version = "0.1.0"
+description = "MCP server for tickets & todos backed by SQLite"
+authors = [{ name = "Jacob Beene" }]
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=2.11.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcp_slate"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
